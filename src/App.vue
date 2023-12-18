@@ -1,6 +1,11 @@
 <template>
   <nav v-if="$route.path === '/'">
-    <router-link to="/accelerator">Акселератор</router-link>
+    <router-link to="/projectant">Страница Проектант</router-link>
+    <br />
+    <router-link to="/expert">Страница Эксперт</router-link>
+    <br />
+    <router-link to="/login">Страница Логин</router-link>
+    <br />
   </nav>
   <router-view/>
 </template>
