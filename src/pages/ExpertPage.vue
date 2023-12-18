@@ -22,12 +22,20 @@
                             name="Иван Иванович Иванов"
                             info="Проект вечного двигателя"
                             date="13.14.2025"
+                            progress="70%"
                         />
                         <CardModuleExpert
                             name="Николай Сергеевич Грин"
                             info="Колесо для лягушек"
                             date="11.02.2023"
+                            progress="60%"
                             :outdated="true"
+                        />
+                        <CardModuleExpert
+                            name="Федор Матвеев"
+                            info="Проект сенсорного манипулятора"
+                            progress="40%"
+                            date="11.06.2025"
                         />
                     </div>
                 </div>

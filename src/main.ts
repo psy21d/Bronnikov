@@ -7,6 +7,9 @@ import './style.css';
 
 import Button from 'primevue/button'
 import TabMenu from 'primevue/tabmenu';
+import Dropdown from 'primevue/dropdown';
+
+
 import CardModuleProjectant from './modules/CardModuleProjectant.vue';
 import CardModuleExpert from './modules/CardModuleExpert.vue';
 import UserPicture from './components/UserPicture.vue';
@@ -18,6 +21,7 @@ createApp(App)
     .use(PrimeVue, { unstyled: true, pt: Tailwind })
     .component('Button', Button)
     .component('TabMenu', TabMenu)
+    .component('Dropdown', Dropdown)
     .component('CardModuleProjectant', CardModuleProjectant)
     .component('CardModuleExpert', CardModuleExpert)
     .component('UserPicture', UserPicture)
