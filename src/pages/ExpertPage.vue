@@ -9,8 +9,8 @@
                 />
             </div>
         </div>
-        <div class="content flex justify-center min-h-screen">
-            <div class="max-w-6xl grow">
+        <div class="content flex justify-center min-w-fit min-h-screen">
+            <div class="max-w-6xl grow mx-8">
                 <div v-if="selectedTab === 0">
                     <div class="button-box flex justify-end mb-3 mt-3">
                         <Button severity="success">
