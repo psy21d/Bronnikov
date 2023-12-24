@@ -18,7 +18,7 @@
                         </Button>
                     </div>
                     <div class="cards flex-col">
-                        <Accordion :activeIndex="0">
+                        <Accordion :activeIndex="0" class="expert-page-accordion">
                             <AccordionTab>
                                 <template #header>
                                     <CardModuleExpert
@@ -100,8 +100,22 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
     .content {
         background-color: rgb(255, 236, 200);
+    }
+    .p-accordion-header {
+
+    }
+    .expert-page-accordion::v-deep [data-pc-section="headeraction"] {
+        background-color: white;
+        flex-direction: row-reverse;
+        margin: 0;
+        padding: 0;
+        gap: 8px;
+        outline: none;
+        &:focus {
+            box-shadow: none;
+        }
     }
 </style>
