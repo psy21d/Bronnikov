@@ -26,7 +26,6 @@
         </div>
         <div class="card-settings-and-delete-box grow-0 flex items-center justify-items-center justify-self-end mx-4">
             <div class="w-12"><img src="/icons/gear.gif" class="w-8 h-8 mx-2"></div>
-            <div class="w-12"><img src="/icons/bucket.png" class="w-8 h-8 mx-2"></div>
         </div>
     </div>
 </template>

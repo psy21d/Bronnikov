@@ -13,6 +13,8 @@ import Dropdown from 'primevue/dropdown';
 import CardModuleProjectant from './modules/CardModuleProjectant.vue';
 import CardModuleExpert from './modules/CardModuleExpert.vue';
 import UserPicture from './components/UserPicture.vue';
+import Accordion from 'primevue/accordion';
+import AccordionTab from 'primevue/accordiontab';
 
 import Tailwind from 'primevue/passthrough/tailwind';
 
@@ -22,6 +24,8 @@ createApp(App)
     .component('Button', Button)
     .component('TabMenu', TabMenu)
     .component('Dropdown', Dropdown)
+    .component('Accordion', Accordion)
+    .component('AccordionTab', AccordionTab)
     .component('CardModuleProjectant', CardModuleProjectant)
     .component('CardModuleExpert', CardModuleExpert)
     .component('UserPicture', UserPicture)
