@@ -45,12 +45,12 @@
                                     </template>
                                     <template #slot3>
                                         <TabMenu
-                                            class="asks-tab-menu"
+                                            class="asks-tab-menu max-w-6xl"
                                             :model="projectMenuItems[0]"
                                             :activeIndex="projectMenuItemsActiveTabs[0]"
                                             @tab-change="(e) => projectMenuItemsTabChange(e, 0)"
                                         />
-                                        <!-- 0 здесь меняется на переменную цикла, проойтись по данным и собрать -->
+                                        <!-- 0 здесь меняется на переменную цикла, проойтись по данным и собрать, создать все табы и вкладки -->
                                         <Accordion :activeIndex="0" class="expert-page-accordion" v-if="projectMenuItemsActiveTabs[0] === 0">
                                             <AccordionTab>
                                                 <template #header>
@@ -93,7 +93,7 @@
                                                     :info="`Безоопасно ли это?`"
                                                 />
                                             </AccordionTab>
-                                            <AccordionTab>
+                                            <AccordionTab :disabled="true">
                                                 <template #header>
                                                     <TextCard 
                                                         :header="'Всего 4 вопроса'"
@@ -182,7 +182,7 @@ export default defineComponent({
                 {label: 'Этап планирования'},
                 {label: 'Этап проектирования'},
                 {label: 'Этап сдачи'},
-                {label: 'Этап защиты прооекта'}
+                {label: 'Этап защиты проекта'}
             ],
             [],
             []
