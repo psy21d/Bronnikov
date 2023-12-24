@@ -19,6 +19,7 @@
                     </div>
                     <div class="cards flex-col">
                         <Accordion :activeIndex="0" class="expert-page-accordion">
+                            <!-- Здесь можно сделать v-for и расставить данные в слоты, а сами слоты тоже итерировать -->
                             <AccordionTab>
                                 <template #header>
                                     <CardModuleExpert
@@ -43,10 +44,63 @@
                                         <TextCard :info="'Скачать презентацию прооекта'" />
                                     </template>
                                     <template #slot3>
-                                        3
-                                    </template>
-                                    <template #slot4>
-                                        4
+                                        <TabMenu
+                                            class="asks-tab-menu"
+                                            :model="projectMenuItems[0]"
+                                            :activeIndex="projectMenuItemsActiveTabs[0]"
+                                            @tab-change="(e) => projectMenuItemsTabChange(e, 0)"
+                                        />
+                                        <!-- 0 здесь меняется на переменную цикла, проойтись по данным и собрать -->
+                                        <Accordion :activeIndex="0" class="expert-page-accordion" v-if="projectMenuItemsActiveTabs[0] === 0">
+                                            <AccordionTab>
+                                                <template #header>
+                                                    <TextCard 
+                                                            :header="'Вопрос первый'"
+                                                    />
+                                                </template>
+                                                <!-- заполнить данными можно автоматизированно по запросу с сервера-->
+                                                <TextCard 
+                                                    :info="`Откуда берётся энергия?`"
+                                                />
+                                            </AccordionTab>
+                                            <AccordionTab>
+                                                <template #header>
+                                                    <TextCard 
+                                                            :header="'Вопрос второй'"
+                                                    />
+                                                </template>                                               
+                                                <TextCard 
+                                                    :info="`Как рассчитать количество энергии в секунду?`"
+                                                />
+                                            </AccordionTab>
+                                            <AccordionTab>
+                                                <template #header>
+                                                    <TextCard 
+                                                        :header="'Вопрос третий'"
+                                                    />
+                                                </template>
+                                                <TextCard 
+                                                    :info="`Размер установки?`"
+                                                />
+                                            </AccordionTab>        
+                                            <AccordionTab>
+                                                <template #header>
+                                                    <TextCard 
+                                                        :header="'Вопрос четвёртый'"
+                                                    />
+                                                </template>
+                                                <TextCard 
+                                                    :info="`Безоопасно ли это?`"
+                                                />
+                                            </AccordionTab>
+                                            <AccordionTab>
+                                                <template #header>
+                                                    <TextCard 
+                                                        :header="'Всего 4 вопроса'"
+                                                    />
+                                                </template>
+                                            </AccordionTab>
+                                        </Accordion>
                                     </template>
                                 </CardBodyModuleExpert>
                             </AccordionTab>
@@ -94,7 +148,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, reactive, ref } from 'vue';
 
 export default defineComponent({
     setup() {
@@ -104,13 +158,51 @@ export default defineComponent({
             {label: 'Экспертиза'}
         ];
         let selectedTab = ref(0);
+        let projectMenuItemsActiveTabs = ref([
+            0,
+            0,
+            0
+        ])
+
+        // Заполнить с сервера
+        // Данные реактивны, можно делать пагинацию и подгрузку
+        let projectMenuItems = ref([
+            [
+                {label: 'Этап 1'},
+                {label: 'Этап 2'},
+                {label: 'Этап 3'},
+                {label: 'Этап 4'},
+                {label: 'Этап 5'},
+                {label: 'Этап 6'},
+                {label: 'Этап 7'},
+                {label: 'Этап 8'},
+                {label: 'Новый этап 9'},
+                {label: 'Этап 10'},
+                {label: 'Этап разработки'},
+                {label: 'Этап планирования'},
+                {label: 'Этап проектирования'},
+                {label: 'Этап сдачи'},
+                {label: 'Этап защиты прооекта'}
+            ],
+            [],
+            []
+        ])
+        
         let tabChange = (e: any) => {
             selectedTab.value = e.index;
+        }
+        let projectMenuItemsTabChange = (e:any, projectNumber: Number) => {
+            console.log(e.index);
+            console.log(projectNumber);
+            projectMenuItemsActiveTabs.value[projectNumber] = parseInt(e.index);
         }
         return {
             menuItems,
             selectedTab,
-            tabChange
+            tabChange,
+            projectMenuItemsActiveTabs,
+            projectMenuItems,
+            projectMenuItemsTabChange
         }
     }
 })
@@ -139,6 +231,22 @@ export default defineComponent({
             background-color: white;
             margin: 0;
             padding: 0;
+        }
+
+    }
+    [data-pc-name="tabmenu"]::v-deep {
+        & [data-pc-section="label"] {
+            text-wrap: nowrap;
+        }
+    }
+    .asks-tab-menu::v-deep {
+        & [data-pc-section="headeraction"] {
+            border-radius: 0;
+            border:none;
+            border-bottom: 1px solid;
+        }
+        & [data-pc-name="accordiontab"] {
+            margin: 0;
         }
     }
 </style>

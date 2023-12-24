@@ -1,5 +1,5 @@
 <template>
-    <div class="min-w-fit max-w-6xl grow gap-x-2 bg-white rounded-md items-start flex flex-col">
+    <div class="card-body-module-expert min-w-fit max-w-6xl grow gap-x-2 bg-white rounded-md items-start flex flex-col">
         <template v-if="slots">
             <div v-for="sl in Object.keys(slots)" class="border-b border-solid border-[#e5e7eb]">
                 <slot :name="sl">
