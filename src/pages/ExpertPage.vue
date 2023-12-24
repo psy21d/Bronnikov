@@ -28,11 +28,22 @@
                                         progress="70%"
                                     />
                                 </template>
-                                <p class="m-0">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                    laborum.
-                                </p>
+                                <CardBodyModuleExpert>
+                                    <!-- название слотов может быть любое, важен лишь порядок следования -->
+                                    <!-- в компоненте они будут следовать один за другим -->
+                                    <template #slot1>
+                                        1
+                                    </template>
+                                    <template #slot2>
+                                        2
+                                    </template>
+                                    <template #slot3>
+                                        3
+                                    </template>
+                                    <template #slot4>
+                                        4
+                                    </template>
+                                </CardBodyModuleExpert>
                             </AccordionTab>
                             <AccordionTab>
                                 <template #header>
@@ -107,15 +118,22 @@ export default defineComponent({
     .p-accordion-header {
 
     }
-    .expert-page-accordion::v-deep [data-pc-section="headeraction"] {
-        background-color: white;
-        flex-direction: row-reverse;
-        margin: 0;
-        padding: 0;
-        gap: 8px;
-        outline: none;
-        &:focus {
-            box-shadow: none;
+    .expert-page-accordion::v-deep {
+        & [data-pc-section="headeraction"] {
+            background-color: white;
+            flex-direction: row-reverse;
+            margin: 0;
+            padding: 0;
+            padding-right: 8px;
+            outline: none;
+            &:focus {
+                box-shadow: none;
+            }
+        }
+        & [data-pc-section="content"] {
+            background-color: white;
+            margin: 0;
+            padding: 0;
         }
     }
 </style>

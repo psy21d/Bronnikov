@@ -1,5 +1,5 @@
 <template>
-    <div @click.stop="" class="min-w-fit max-w-6xl grow gap-x-2 bg-white rounded-md h-24 items-center flex">
+    <div @click.stop="" class="min-w-fit max-w-6xl grow gap-x-2 bg-white rounded-md h-24 items-center flex cursor-default">
         <div class ="user-picture w-28 grow">
             <UserPicture class="mx-8 grow-0"/>
         </div>
