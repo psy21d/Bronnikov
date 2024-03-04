@@ -1,4 +1,5 @@
 # project-registrator
+# just an boilerplate: vue + tailwind + PrimeVue + Atomic design
 
 ## Project setup
 ```
