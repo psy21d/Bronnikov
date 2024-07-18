@@ -15,8 +15,8 @@ module.exports = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
-    'plugin:storybook/recommended'
-    'prettier',
+    'plugin:storybook/recommended',
+    'prettier'
   ],
   rules: {
     // override/add rules settings here, such as:
