@@ -1,5 +1,6 @@
 <template>
   <VIcon :name="Icon.MonoWallet" />
+  Lorem
   <router-view />
 </template>
 
