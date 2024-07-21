@@ -8,4 +8,6 @@
   import { Icon } from '@/composables/useIcons'
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+  @import '@/assets/styles/global.scss';
+</style>
